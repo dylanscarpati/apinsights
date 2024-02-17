@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP Biology Score Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>AP Biology Score Calculator</h2>
+  <form id="calculator-form">
+    <div class="form-group">
+      <label for="multiple-choice">Section I: Multiple-Choice (/60)</label>
+      <input type="range" id="multiple-choice" name="multiple-choice" min="0" max="60" value="0">
+      <output for="multiple-choice" id="mc-output">0</output>
+    </div>
+    <div class="form-group">
+      <label for="frq1">Section II: Free Response - Q1 (/10)</label>
+      <input type="range" id="frq1" name="frq1" min="0" max="10" value="0">
+      <output for="frq1" id="frq1-output">0</output>
+    </div>
+    <div class="form-group">
+      <label for="frq2">Section II: Free Response - Q2 (/10)</label>
+      <input type="range" id="frq2" name="frq2" min="0" max="10" value="0">
+      <output for="frq2" id="frq2-output">0</output>
+    </div>
+    <div class="form-group">
+      <label for="frq3">Section II: Free Response - Q3 (Scientific Investigation) (/4)</label>
+      <input type="range" id="frq3" name="frq3" min="0" max="4" value="0">
+      <output for="frq3" id="frq3-output">0</output>
+    </div>
+    <div class="form-group">
+      <label for="frq4">Section II: Free Response - Q4 (Conceptual Analysis) (/4)</label>
+      <input type="range" id="frq4" name="frq4" min="0" max="4" value="0">
+      <output for="frq4" id="frq4-output">0</output>
+    </div>
+    <div class="form-group">
+      <label for="frq5">Section II: Free Response - Q5 (Analysis of Model or Visual Representation) (/4)</label>
+      <input type="range" id="frq5" name="frq5" min="0" max="4" value="0">
+      <output for="frq5" id="frq5-output">0</output>
+    </div>
+    <div class="form-group">
+      <label for="frq6">Section II: Free Response - Q6 (Analysis of Data) (/4)</label>
+      <input type="range" id="frq6" name="frq6" min="0" max="4" value="0">
+      <output for="frq6" id="frq6-output">0</output>
+    </div>
+    <button type="submit">Calculate</button>
+  </form>
+  
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
