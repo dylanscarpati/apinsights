@@ -1,0 +1,12 @@
+# AP Class Insights API Design
+
+---
+
+# Suggestions
+## `GET /suggestions`
+
+Request Body: `{"coursesTaken" : [String, ...], "majorOne" : String, "majorTwo" : String}`
+
+Response: `[{"className" : String, "scoreDistribution" : [{"score" : 5, "percentage" : Integer}, {"score" : 4, "percentage" : Integer}, {"score" : 3, "percentage" : Integer}, {"score" : 2, "percentage" : Integer}, {"score" : 1, "percentage" : Integer}], "difficulty" : Integer}, ...]`
+
+Errors: 500 (All AP Courses Taken), 404 (Majors are Invalid), 404 (Courses Taken Are Invalid)
