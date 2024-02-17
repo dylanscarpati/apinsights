@@ -51,6 +51,6 @@ export class MajorsService {
   }
 
   findOne(id: string): Major | undefined {
-    return this.majors.find(major => major.id === id);
+    return this.majors.find((major) => major.id === id);
   }
 }
