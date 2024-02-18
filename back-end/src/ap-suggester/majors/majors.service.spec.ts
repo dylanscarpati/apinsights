@@ -20,7 +20,7 @@ describe('MajorsService', () => {
     it('should return an array of all majors', () => {
       const majors = service.findAll();
       expect(Array.isArray(majors)).toBeTruthy();
-      expect(majors.length).toBe(36); 
+      expect(majors.length).toBe(36);
       expect(majors[0]).toHaveProperty('id');
       expect(majors[0]).toHaveProperty('name');
     });
@@ -28,7 +28,7 @@ describe('MajorsService', () => {
 
   describe('findOne', () => {
     it('should return a specific major by ID if it exists', () => {
-      const sampleId = '1'; 
+      const sampleId = '1';
       const major = service.findOne(sampleId);
       expect(major).toBeDefined();
       expect(major).toHaveProperty('id', sampleId);
@@ -36,7 +36,7 @@ describe('MajorsService', () => {
     });
 
     it('should return undefined for an ID that does not exist', () => {
-      const nonExistentId = '100'; 
+      const nonExistentId = '100';
       const major = service.findOne(nonExistentId);
       expect(major).toBeUndefined();
     });
@@ -50,7 +50,7 @@ describe('MajorsService', () => {
         { id: '34', name: 'Physical Therapy/Kinesiology' },
       ];
 
-      knownMajors.forEach(knownMajor => {
+      knownMajors.forEach((knownMajor) => {
         const major = service.findOne(knownMajor.id);
         expect(major).toBeDefined();
         expect(major).toHaveProperty('id', knownMajor.id);
@@ -62,7 +62,7 @@ describe('MajorsService', () => {
   describe('Comprehensive Major Verification', () => {
     it('should verify the integrity of all majors', () => {
       const majors = service.findAll();
-      majors.forEach(major => {
+      majors.forEach((major) => {
         const foundMajor = service.findOne(major.id);
         expect(foundMajor).toBeDefined();
         expect(foundMajor).toEqual(major);

@@ -10,11 +10,11 @@ describe('MajorsController', () => {
     const mockMajorsService = {
       findAll: jest.fn(() => [
         { id: '1', name: 'Computer Science' },
-        { id: '2', name: 'Business and Management' }
+        { id: '2', name: 'Business and Management' },
       ]),
       findOne: jest.fn((id: string) => ({
         id,
-        name: id === '1' ? 'Computer Science' : 'Unknown'
+        name: id === '1' ? 'Computer Science' : 'Unknown',
       })),
     };
 
@@ -40,7 +40,7 @@ describe('MajorsController', () => {
     it('should return an array of majors', async () => {
       await expect(controller.getAllMajors()).resolves.toEqual([
         { id: '1', name: 'Computer Science' },
-        { id: '2', name: 'Business and Management' }
+        { id: '2', name: 'Business and Management' },
       ]);
       expect(service.findAll).toHaveBeenCalled();
     });
@@ -51,15 +51,17 @@ describe('MajorsController', () => {
       const majorId = '1';
       await expect(controller.getMajorById(majorId)).resolves.toEqual({
         id: majorId,
-        name: 'Computer Science'
+        name: 'Computer Science',
       });
       expect(service.findOne).toHaveBeenCalledWith(majorId);
     });
 
     it('should handle the case where the major does not exist', async () => {
       const nonExistentId = '999';
-      service.findOne = jest.fn().mockReturnValueOnce(undefined); 
-      await expect(controller.getMajorById(nonExistentId)).rejects.toThrow('Major not found');
+      service.findOne = jest.fn().mockReturnValueOnce(undefined);
+      await expect(controller.getMajorById(nonExistentId)).rejects.toThrow(
+        'Major not found',
+      );
       expect(service.findOne).toHaveBeenCalledWith(nonExistentId);
     });
   });

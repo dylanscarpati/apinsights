@@ -4,6 +4,6 @@ import { ApClassesController } from './ap-classes.controller';
 
 @Module({
   providers: [ApClassesService],
-  controllers: [ApClassesController]
+  controllers: [ApClassesController],
 })
 export class ApClassesModule {}

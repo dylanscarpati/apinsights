@@ -44,5 +44,4 @@ describe('ApClassesController', () => {
     expect(await controller.getApClassById(id)).toBe(expectedApClass);
     expect(mockApClassesService.findOne).toHaveBeenCalledWith(id);
   });
-
 });
