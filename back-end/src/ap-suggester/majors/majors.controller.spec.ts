@@ -65,4 +65,31 @@ describe('MajorsController', () => {
       expect(service.findOne).toHaveBeenCalledWith(nonExistentId);
     });
   });
+
+  describe('receiveSelectedMajors', () => {
+    it('should accept exactly two selected majors and return a success message', async () => {
+      const selectedMajors = ['Computer Science', 'Business and Management'];
+      await expect(controller.receiveSelectedMajors(selectedMajors)).resolves.toEqual({
+        status: 'success',
+        message: 'Selected majors received successfully.'
+      });
+    });
+
+    it('should return an error message if more or less than two majors are selected', async () => {
+      const selectedMajorsTooFew = ['Computer Science'];
+      const selectedMajorsTooMany = ['Computer Science', 'Business and Management', 'Biology'];
+
+      // Testing for too few majors selected
+      await expect(controller.receiveSelectedMajors(selectedMajorsTooFew)).resolves.toEqual({
+        status: 'error',
+        message: 'You must select exactly two majors.'
+      });
+
+      // Testing for too many majors selected
+      await expect(controller.receiveSelectedMajors(selectedMajorsTooMany)).resolves.toEqual({
+        status: 'error',
+        message: 'You must select exactly two majors.'
+      });
+    });
+  });
 });
