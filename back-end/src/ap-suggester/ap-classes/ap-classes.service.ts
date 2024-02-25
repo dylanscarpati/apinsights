@@ -5,6 +5,7 @@ export interface ApClass {
   name: string;
   scoreDistribution: ScoreDistributionItem[];
   difficulty: number;
+  attributes: string[];
 }
 
 export interface ScoreDistributionItem {
@@ -26,6 +27,7 @@ export class ApClassesService {
         { score: 1, percentage: 11.6 },
       ],
       difficulty: 3,
+      attributes: ['Historical Perspectives', 'Cultural Awareness'],
     },
     {
       id: '2',
@@ -38,6 +40,7 @@ export class ApClassesService {
         { score: 1, percentage: 12 },
       ],
       difficulty: 4,
+      attributes: ['Scientific Methodology', 'Analytical Thinking', 'Health and Life Sciences', 'Data Interpretation'],
     },
     {
       id: '3',
@@ -50,6 +53,7 @@ export class ApClassesService {
         { score: 1, percentage: 20.3 },
       ],
       difficulty: 4,
+      attributes: ['Analytical Thinking', 'Quantitative Skills', 'Problem-Solving'],
     },
     {
       id: '4',
@@ -62,6 +66,7 @@ export class ApClassesService {
         { score: 1, percentage: 6.3 },
       ],
       difficulty: 5,
+      attributes:  ['Analytical Thinking', 'Quantitative Skills', 'Problem-Solving'],
     },
     {
       id: '5',
@@ -74,6 +79,7 @@ export class ApClassesService {
         { score: 1, percentage: 8.0 },
       ],
       difficulty: 5,
+      attributes: ['Scientific Methodology', 'Analytical Thinking', 'Data Interpretation'],
     },
     {
       id: '6',
@@ -86,6 +92,7 @@ export class ApClassesService {
         { score: 1, percentage: 6.6 },
       ],
       difficulty: 3,
+      attributes: ['Cultural Awareness', 'Global Perspectives', 'Communication Skills'],
     },
     {
       id: '7',
@@ -98,6 +105,7 @@ export class ApClassesService {
         { score: 1, percentage: 13.0 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Global Perspectives', 'Social Justice and Equity'],
     },
     {
       id: '8',
@@ -110,6 +118,7 @@ export class ApClassesService {
         { score: 1, percentage: 22.5 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Technical Proficiency', 'Problem-Solving'],
     },
     {
       id: '9',
@@ -122,6 +131,7 @@ export class ApClassesService {
         { score: 1, percentage: 16.4 },
       ],
       difficulty: 2,
+      attributes: ['Analytical Thinking', 'Problem-Solving'],
     },
     {
       id: '10',
@@ -134,6 +144,7 @@ export class ApClassesService {
         { score: 1, percentage: 14.4 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Communication Skills'],
     },
     {
       id: '11',
@@ -146,6 +157,7 @@ export class ApClassesService {
         { score: 1, percentage: 8.4 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Literary Analysis'],
     },
     {
       id: '12',
@@ -158,6 +170,7 @@ export class ApClassesService {
         { score: 1, percentage: 19.9 },
       ],
       difficulty: 3,
+      attributes: ['Scientific Methodology', 'Environmental Awareness', 'Data Interpretation'],
     },
     {
       id: '13',
@@ -170,6 +183,7 @@ export class ApClassesService {
         { score: 1, percentage: 11.6 },
       ],
       difficulty: 4,
+      attributes: ['Historical Perspectives', 'Analytical Thinking', 'Cultural Awareness'],
     },
     {
       id: '14',
@@ -182,6 +196,7 @@ export class ApClassesService {
         { score: 1, percentage: 5.5 },
       ],
       difficulty: 3,
+      attributes: ['Cultural Awareness', 'Global Perspectives', 'Communication Skills'],
     },
     {
       id: '15',
@@ -194,6 +209,7 @@ export class ApClassesService {
         { score: 1, percentage: 12.8 },
       ],
       difficulty: 3,
+      attributes: ['Cultural Awareness', 'Global Perspectives', 'Communication Skills'],
     },
     {
       id: '16',
@@ -206,6 +222,7 @@ export class ApClassesService {
         { score: 1, percentage: 31.6 },
       ],
       difficulty: 2,
+      attributes: ['Analytical Thinking', 'Global Perspectives', 'Cultural Awareness'],
     },
     {
       id: '17',
@@ -218,6 +235,7 @@ export class ApClassesService {
         { score: 1, percentage: 10.1 },
       ],
       difficulty: 3,
+      attributes: ['Cultural Awareness', 'Global Perspectives', 'Communication Skills'],
     },
     {
       id: '18',
@@ -230,6 +248,7 @@ export class ApClassesService {
         { score: 1, percentage: 14.9 },
       ],
       difficulty: 3,
+      attributes: ['Cultural Awareness', 'Global Perspectives', 'Communication Skills'],
     },
     {
       id: '19',
@@ -242,6 +261,7 @@ export class ApClassesService {
         { score: 1, percentage: 18.4 },
       ],
       difficulty: 4,
+      attributes: ['Historical Perspectives', 'Linguistic Analysis'],
     },
     {
       id: '20',
@@ -254,6 +274,7 @@ export class ApClassesService {
         { score: 1, percentage: 13.7 },
       ],
       difficulty: 2,
+      attributes: ['Analytical Thinking', 'Global Perspectives'],
     },
     {
       id: '21',
@@ -266,6 +287,7 @@ export class ApClassesService {
         { score: 1, percentage: 12.1 },
       ],
       difficulty: 2,
+      attributes: ['Analytical Thinking', 'Global Perspectives'],
     },
     {
       id: '22',
@@ -278,6 +300,7 @@ export class ApClassesService {
         { score: 1, percentage: 15.2 },
       ],
       difficulty: 4,
+      attributes:  ['Creative Expression', 'Analytical Thinking'],
     },
     {
       id: '23',
@@ -290,6 +313,7 @@ export class ApClassesService {
         { score: 1, percentage: 26.4 },
       ],
       difficulty: 4,
+      attributes: ['Scientific Methodology', 'Analytical Thinking', 'Problem-Solving'],
     },
     {
       id: '24',
@@ -302,6 +326,7 @@ export class ApClassesService {
         { score: 1, percentage: 6.4 },
       ],
       difficulty: 4,
+      attributes: ['Scientific Methodology', 'Analytical Thinking', 'Problem-Solving'],
     },
     {
       id: '25',
@@ -314,6 +339,7 @@ export class ApClassesService {
         { score: 1, percentage: 11.9 },
       ],
       difficulty: 5,
+      attributes: ['Scientific Methodology', 'Analytical Thinking', 'Problem-Solving'],
     },
     {
       id: '26',
@@ -326,6 +352,7 @@ export class ApClassesService {
         { score: 1, percentage: 12.5 },
       ],
       difficulty: 5,
+      attributes: ['Scientific Methodology', 'Analytical Thinking', 'Problem-Solving'],
     },
     {
       id: '27',
@@ -338,6 +365,7 @@ export class ApClassesService {
         { score: 1, percentage: 28 },
       ],
       difficulty: 2,
+      attributes: ['Analytical Thinking', 'Scientific Methodology', 'Problem-Solving'],
     },
     {
       id: '28',
@@ -350,6 +378,7 @@ export class ApClassesService {
         { score: 1, percentage: 3.1 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Research Methodology'],
     },
     {
       id: '29',
@@ -362,6 +391,7 @@ export class ApClassesService {
         { score: 1, percentage: 3.8 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Research Methodology'],
     },
     {
       id: '30',
@@ -374,6 +404,7 @@ export class ApClassesService {
         { score: 1, percentage: 2.7 },
       ],
       difficulty: 3,
+      attributes: ['Cultural Awareness', 'Global Perspectives', 'Communication Skills'],
     },
     {
       id: '31',
@@ -386,6 +417,7 @@ export class ApClassesService {
         { score: 1, percentage: 10.1 },
       ],
       difficulty: 4,
+      attributes: ['Cultural Awareness', 'Literary Analysis'],
     },
     {
       id: '32',
@@ -398,6 +430,7 @@ export class ApClassesService {
         { score: 1, percentage: 23.8 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Quantitative Skills', 'Data Interpretation'],
     },
     {
       id: '33',
@@ -410,6 +443,7 @@ export class ApClassesService {
         { score: 1, percentage: 2 },
       ],
       difficulty: 3,
+      attributes: ['Creative Expression', 'Visual Analysis'],
     },
     {
       id: '34',
@@ -422,6 +456,7 @@ export class ApClassesService {
         { score: 1, percentage: 4.4 },
       ],
       difficulty: 3,
+      attributes: ['Creative Expression', 'Design Principles'],
     },
     {
       id: '35',
@@ -434,6 +469,7 @@ export class ApClassesService {
         { score: 1, percentage: 2.1 },
       ],
       difficulty: 3,
+      attributes: ['Creative Expression', 'Visual Analysis'],
     },
     {
       id: '36',
@@ -446,6 +482,7 @@ export class ApClassesService {
         { score: 1, percentage: 26.8 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Historical Perspectives', 'Social Justice and Equity'],
     },
     {
       id: '37',
@@ -458,6 +495,7 @@ export class ApClassesService {
         { score: 1, percentage: 29.8 },
       ],
       difficulty: 4,
+      attributes: ['Historical Perspectives', 'Analytical Thinking', 'Social Justice and Equity'],
     },
     {
       id: '38',
@@ -470,6 +508,7 @@ export class ApClassesService {
         { score: 1, percentage: 13 },
       ],
       difficulty: 4,
+      attributes: ['Historical Perspectives', 'Analytical Thinking', 'Global Perspectives'],
     },
     {
       id: '39',
@@ -482,10 +521,11 @@ export class ApClassesService {
         { score: 1, percentage: 0 },
       ],
       difficulty: 3,
+      attributes: ['Analytical Thinking', 'Quantitative Skills'],
     },
   ];
 
-  findAll(): ApClass[] {
+  getAllApClasses(): ApClass[] {
     return this.apClasses;
   }
 

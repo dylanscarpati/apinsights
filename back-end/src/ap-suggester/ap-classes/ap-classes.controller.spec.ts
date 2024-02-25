@@ -18,6 +18,7 @@ describe('ApClassesController', () => {
             { score: 4, percentage: 23.8 },
           ],
           difficulty: 3,
+          attributes: ['Historical Perspectives', 'Cultural Awareness'],
         },
       ]),
       findOne: jest.fn((id: string): ApClass => ({
@@ -27,6 +28,7 @@ describe('ApClassesController', () => {
           { score: 5, percentage: 20 },
         ],
         difficulty: 3,
+        attributes: ['Historical Perspectives', 'Cultural Awareness'],
       })),
     };
 
@@ -58,13 +60,14 @@ describe('ApClassesController', () => {
           { score: 4, percentage: 23.8 },
         ],
         difficulty: 3,
+        attributes: ['Historical Perspectives', 'Cultural Awareness'],
       },
     ];
 
-    jest.spyOn(service, 'findAll').mockImplementation(() => expected);
+    jest.spyOn(service, 'getAllApClasses').mockImplementation(() => expected);
 
     expect(await controller.getAllApClasses()).toBe(expected);
-    expect(service.findAll).toHaveBeenCalled();
+    expect(service.getAllApClasses).toHaveBeenCalled();
   });
 
   it('should get a single AP class by id', async () => {
@@ -76,6 +79,7 @@ describe('ApClassesController', () => {
         { score: 5, percentage: 20 },
       ],
       difficulty: 3,
+      attributes: ['Historical Perspectives', 'Cultural Awareness'],
     };
 
     jest.spyOn(service, 'findOne').mockImplementation(() => expectedApClass);
@@ -90,10 +94,5 @@ describe('ApClassesController', () => {
 
     expect(response).toEqual({ status: 'success' });
 
-    // Here, you might also want to verify that any side effects of processing
-    // takenApClasses occur as expected. Since the current implementation only logs
-    // the input, there's no side effect to test yet. But if you later add logic
-    // to store user selections or modify application state, you should add
-    // corresponding checks here.
   });
 });

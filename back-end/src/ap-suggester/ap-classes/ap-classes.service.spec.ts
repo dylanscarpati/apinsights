@@ -17,9 +17,9 @@ describe('ApClassesService', () => {
     expect(service).toBeDefined();
   });
 
-  describe('findAll', () => {
+  describe('fgetAllApClasses', () => {
     it('should return an array of AP classes', () => {
-      const apClasses = service.findAll();
+      const apClasses = service.getAllApClasses();
       expect(apClasses).toBeInstanceOf(Array);
       expect(apClasses).toHaveLength(39);
     });

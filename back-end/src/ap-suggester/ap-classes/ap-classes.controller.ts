@@ -8,7 +8,7 @@ export class ApClassesController {
   // This method retrieves all AP classes. The frontend needs to call this to display options to the user.
   @Get()
   async getAllApClasses(): Promise<ApClass[]> {
-    return await this.apClassesService.findAll();
+    return await this.apClassesService.getAllApClasses();
   }
 
   // This method retrieves a single AP class by ID. The frontend can use this for detailed views of an AP class.

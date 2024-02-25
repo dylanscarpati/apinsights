@@ -45,9 +45,9 @@ describe('MajorsService', () => {
   describe('Major ID and Name Integrity', () => {
     it('should have correct names for known IDs', () => {
       const knownMajors: Major[] = [
-        { id: '11', name: 'Computer Science' },
-        { id: '28', name: 'Nursing' },
-        { id: '34', name: 'Physical Therapy/Kinesiology' },
+        { id: '1', name: 'Computer Science', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation', 'Interdisciplinary Knowledge'] },
+        { id: '21', name: 'Information Technology (IT)', attributes: ['Analytical Thinking', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation'] },
+        { id: '28', name: 'Pharmacy', attributes: ['Scientific Methodology', 'Health and Life Sciences', 'Ethical Reasoning', 'Problem-Solving'] },
       ];
 
       knownMajors.forEach((knownMajor) => {
