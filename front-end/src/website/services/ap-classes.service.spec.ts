@@ -2,8 +2,8 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { ApClassesService } from './ap-classes.service';
-import { environment } from '../../environments/environment';
-import { ApClass } from '../../models/ap-class.model';
+import { environment } from '../environments/environment';
+import { ApClass } from '../models/ap-class.model';
 
 describe('ApClassesService', () => {
   let service: ApClassesService;

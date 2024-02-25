@@ -1,8 +1,8 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { MajorsService } from './majors.service';
-import { environment } from '../../environments/environment';
-import { Major } from '../../models/major.model';
+import { environment } from '../environments/environment';
+import { Major } from '../models/major.model';
 
 describe('MajorsService', () => {
   let service: MajorsService;

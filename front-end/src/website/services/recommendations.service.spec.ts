@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RecommendationsService } from './recommendations.service';
-import { environment } from '../../environments/environment';
-import { ApClass } from '../../models/ap-class.model';
+import { environment } from '../environments/environment';
+import { ApClass } from '../models/ap-class.model';
 
 describe('RecommendationsService', () => {
   let service: RecommendationsService;
