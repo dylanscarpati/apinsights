@@ -10,8 +10,8 @@ export class HomePageComponent {
 
   constructor(private router: Router) {}
 
-  navigateToRecommendations() {
-    this.router.navigateByUrl('/recommendations'); // Adjust the URL to where you want the Get Started button to navigate to
+  navigateToMajors() {
+    this.router.navigateByUrl('/majors'); 
   }
   
 

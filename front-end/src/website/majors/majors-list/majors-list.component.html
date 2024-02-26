@@ -1,1 +1,12 @@
-<p>majors-list works!</p>
+<div class="majors-container">
+    <h2>Please select two majors from the following list</h2>
+    <div class="majors-list">
+      <button *ngFor="let major of majors"
+              (click)="selectMajor(major)"
+              [class.selected]="isSelected(major)">
+        {{ major.name }}
+      </button>
+    </div>
+    <button (click)="generateRecommendations()"
+            [disabled]="selectedMajors.length !== 2">Generate Recommendations</button>
+  </div>
