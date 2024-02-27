@@ -1,48 +1,67 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RecommendationsService } from './recommendations.service';
-import { environment } from '../environments/environment';
-import { ApClass } from '../models/ap-class.model';
+import { ApClassesService } from './ap-classes.service';
+import { MajorsService } from './majors.service';
 
 describe('RecommendationsService', () => {
   let service: RecommendationsService;
-  let httpTestingController: HttpTestingController;
+  let apClassesService: ApClassesService;
+  let majorsService: MajorsService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [RecommendationsService]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      providers: [
+        RecommendationsService,
+        {
+          provide: ApClassesService,
+          useValue: {
+            getAllApClasses: jasmine.createSpy().and.resolveTo([
+              { id: '1', name: 'History', attributes: ['Historical Perspectives', 'Cultural Awareness'] },
+              { id: '2', name: 'Physics', attributes: ['Scientific Methodology', 'Analytical Thinking', 'Health and Life Sciences', 'Data Interpretation'] },
+            ]),
+          },
+        },
+        {
+          provide: MajorsService,
+          useValue: {
+            getMajorAttributes: jasmine.createSpy().and.callFake((major) => {
+              switch (major) {
+                case 'History':
+                  return Promise.resolve(['Historical Perspectives', 'Cultural Awareness']);
+                case 'Physics':
+                  return Promise.resolve(['Scientific Methodology', 'Analytical Thinking', 'Health and Life Sciences', 'Data Interpretation']);
+                default:
+                  return Promise.resolve([]);
+              }
+            }),
+          },
+        },
+      ],
+    }).compileComponents();
 
     service = TestBed.inject(RecommendationsService);
-    httpTestingController = TestBed.inject(HttpTestingController);
+    apClassesService = TestBed.inject(ApClassesService);
+    majorsService = TestBed.inject(MajorsService);
   });
 
-  afterEach(() => {
-    httpTestingController.verify();
+  it('should be defined', () => {
+    expect(service).toBeDefined();
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  describe('getRecommendations', () => {
+    it('should return recommended AP classes based on the attributes of two majors', async () => {
+      const major1 = 'History';
+      const major2 = 'Physics';
+      const recommendations = await service.getRecommendations(major1, major2);
+
+      expect(recommendations.length).toBeGreaterThan(0);
+      const expectedNames = ['History', 'Physics'];
+      const receivedNames = recommendations.map(r => r.name);
+      expectedNames.forEach(name => expect(receivedNames).toContain(name));
+
+      expect(majorsService.getMajorAttributes).toHaveBeenCalledWith(major1);
+      expect(majorsService.getMajorAttributes).toHaveBeenCalledWith(major2);
+      expect(apClassesService.getAllApClasses).toHaveBeenCalled();
+    });
   });
-
-  it('getRecommendations should return expected AP classes (HttpClient called once)', () => {
-    const expectedApClasses: ApClass[] = [
-      { id: '1', name: 'AP Class 1', attributes: ['Attribute1', 'Attribute2'], scoreDistribution: [], difficulty: 3 },
-      { id: '2', name: 'AP Class 2', attributes: ['Attribute2', 'Attribute3'], scoreDistribution: [], difficulty: 2 }
-    ];
-
-    const major1 = 'Computer Science';
-    const major2 = 'Mathematics';
-
-    service.getRecommendations(major1, major2).subscribe(
-      apClasses => expect(apClasses).toEqual(expectedApClasses, 'expected AP classes'),
-      fail
-    );
-
-    const req = httpTestingController.expectOne(`${environment.apiUrl}/recommendations?major1=${encodeURIComponent(major1)}&major2=${encodeURIComponent(major2)}`);
-    expect(req.request.method).toEqual('GET');
-    req.flush(expectedApClasses);
-  });
-
 });

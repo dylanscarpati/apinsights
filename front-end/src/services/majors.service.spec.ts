@@ -1,57 +1,46 @@
-import { TestBed, inject } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { MajorsService } from './majors.service';
-import { environment } from '../environments/environment';
-import { Major } from '../models/major.model';
+import { TestBed } from '@angular/core/testing';
+import { MajorsService, Major } from './majors.service';
 
 describe('MajorsService', () => {
   let service: MajorsService;
-  let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
       providers: [MajorsService]
     });
     service = TestBed.inject(MajorsService);
-    httpMock = TestBed.inject(HttpTestingController);
-  });
-
-  afterEach(() => {
-    httpMock.verify();
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should retrieve all majors from the API via GET', () => {
-    const mockMajors: Major[] = [
-      { id: '1', name: 'Computer Science', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation', 'Interdisciplinary Knowledge'] },
-      { id: '21', name: 'Information Technology (IT)', attributes: ['Analytical Thinking', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation'] },
-      { id: '28', name: 'Pharmacy', attributes: ['Scientific Methodology', 'Health and Life Sciences', 'Ethical Reasoning', 'Problem-Solving'] },
-    ];
-
-    service.getAllMajors().subscribe(majors => {
-      expect(majors.length).toBe(mockMajors.length);
-      expect(majors).toEqual(mockMajors);
+  describe('findAll', () => {
+    it('should return an array of all majors', () => {
+      const majors = service.findAll();
+      expect(Array.isArray(majors)).toBeTruthy();
+      expect(majors.length).toBeGreaterThan(0); 
+      expect(majors[0].id).toBeDefined();
+      expect(majors[0].name).toBeDefined();
     });
-
-    const request = httpMock.expectOne(`${environment.apiUrl}/majors`);
-    expect(request.request.method).toBe('GET');
-    request.flush(mockMajors);
   });
 
-  it('should retrieve a single major by ID from the API via GET', () => {
-    const mockMajor: Major = { id: '1', name: 'Computer Science', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation', 'Interdisciplinary Knowledge'] };
-    const id = '1';
-
-    service.getMajorById(id).subscribe(major => {
-      expect(major).toEqual(mockMajor);
+  describe('findOne', () => {
+    it('should return a specific major by ID if it exists', () => {
+      const sampleId = '20';
+      const major = service.findOne(sampleId);
+      expect(major).toBeDefined();
+      if (major) {
+        expect(major.id).toEqual(sampleId);
+        expect(major.name).toEqual('Health Sciences/Pre-med');
+      }
     });
 
-    const request = httpMock.expectOne(`${environment.apiUrl}/majors/${id}`);
-    expect(request.request.method).toBe('GET');
-    request.flush(mockMajor);
+    it('should return undefined for an ID that does not exist', () => {
+      const nonExistentId = '100';
+      const major = service.findOne(nonExistentId);
+      expect(major).toBeUndefined();
+    });
   });
+
 });

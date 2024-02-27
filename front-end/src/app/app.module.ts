@@ -5,7 +5,6 @@ import { HomePageComponent } from '../website/home-page/home-page.component';
 import { RecommendationsViewComponent } from '../website/recommendations/recommendations-view/recommendations-view.component';
 import { ApClassDetailComponent } from '../website/ap-classes/ap-class-detail/ap-class-detail.component';
 import { MajorsListComponent } from '../website/majors/majors-list/majors-list.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routes';
 
 @NgModule({
@@ -14,12 +13,11 @@ import { AppRoutingModule } from './app.routes';
     HomePageComponent,
     RecommendationsViewComponent,
     ApClassDetailComponent,
-    MajorsListComponent
+    MajorsListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

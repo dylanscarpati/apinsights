@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecommendationsService } from '../../../services/recommendations.service';
-import { ApClass } from '../../../models/ap-class.model';
+import { ApClass } from '../../../services/ap-classes.service';
 
 @Component({
   selector: 'app-recommendations-view',
@@ -26,17 +26,8 @@ export class RecommendationsViewComponent implements OnInit {
       const major2 = params['major2'];
 
       if (major1 && major2) {
-        this.recommendationsService.getRecommendations(major1, major2)
-          .subscribe(
-            recommendations => {
-              this.recommendedClasses = recommendations;
-              this.loading = false;
-            },
-            error => {
-              this.error = 'Failed to load recommendations. Please try again.';
-              this.loading = false;
-            }
-          );
+        this.recommendedClasses = this.recommendationsService.getRecommendations(major1, major2);
+        this.loading = false;
       } else {
         this.error = 'Majors not specified. Please select two majors.';
         this.loading = false;
