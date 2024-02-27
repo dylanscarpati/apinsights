@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MajorsService, Major } from '../../../services/majors.service'
+import { MajorsService, Major } from '../../../services/majors.service';
 import { NavigationExtras } from '@angular/router';
 
 @Component({
@@ -20,12 +20,16 @@ export class MajorsListComponent implements OnInit {
 
   selectMajor(major: Major): void {
     const index = this.selectedMajors.findIndex(m => m.id === major.id);
+  
     if (index >= 0) {
       this.selectedMajors.splice(index, 1);
-    } else if (this.selectedMajors.length < 2) {
-      this.selectedMajors.push(major);
+    } else {
+      if (this.selectedMajors.length < 2) {
+        this.selectedMajors.push(major);
+      }
     }
   }
+  
 
   isSelected(major: Major): boolean {
     return this.selectedMajors.some(m => m.id === major.id);
@@ -33,15 +37,14 @@ export class MajorsListComponent implements OnInit {
 
   generateRecommendations(): void {
     if (this.selectedMajors.length === 2) {
-      const queryParams = {
-        major1: this.selectedMajors[0].id,
-        major2: this.selectedMajors[1].id
+      const queryParams: NavigationExtras = {
+        queryParams: {
+          major1: this.selectedMajors[0].id,
+          major2: this.selectedMajors[1].id
+        }
       };
-      const navigationExtras: NavigationExtras = {
-        queryParams: queryParams
-      };
-      this.router.navigateByUrl('/recommendations', navigationExtras);
+      this.router.navigate(['/recommendations'], queryParams);
     }
-  }
+  }  
   
 }

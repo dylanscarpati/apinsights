@@ -1,23 +1,13 @@
-<div *ngIf="loading">
-    <p>Loading recommendations...</p>
-  </div>
-  
-  <div *ngIf="error">
-    <p>{{ error }}</p>
-  </div>
-  
-  <div *ngIf="recommendedClasses.length > 0">
-    <h2>Here are your recommendations based on your selected majors:</h2>
-    <div class="recommendations-list">
-      <button *ngFor="let apClass of recommendedClasses"
-              (click)="viewClassDetail(apClass)"
-              class="recommendation-button">
-        {{ apClass.name }}
-      </button>
-    </div>
-  </div>
-  
-  <div *ngIf="!loading && !error && recommendedClasses.length === 0">
-    <p>No recommendations found. Please try selecting different majors.</p>
-  </div>
-  
+<div [hidden]="showLoading || showError || noRecommendations">
+  <h2>Here are your recommendations based on your selected majors:</h2>
+  <div [innerHTML]="recommendationsHtml"></div>
+</div>
+<div [hidden]="!showLoading">
+  <p>Loading...</p>
+</div>
+<div [hidden]="!showError">
+  <p>{{ errorMessage }}</p>
+</div>
+<div [hidden]="!noRecommendations">
+  <p>No recommendations found. Please try selecting different majors.</p>
+</div>

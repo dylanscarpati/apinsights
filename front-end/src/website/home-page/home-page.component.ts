@@ -10,9 +10,8 @@ export class HomePageComponent {
 
   constructor(private router: Router) {}
 
-  navigateToMajors() {
-    this.router.navigateByUrl('/majors'); 
+  navigateToMajors(): void {
+    this.router.navigate(['/majors']);
   }
-  
 
 }

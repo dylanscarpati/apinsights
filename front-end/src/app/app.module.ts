@@ -22,9 +22,6 @@ import { RecommendationsService } from '../services/recommendations.service';
     BrowserModule,
     AppRoutingModule,
   ],
-  exports: [
-    RecommendationsViewComponent,
-  ],
   providers: [
     RecommendationsService
   ],
