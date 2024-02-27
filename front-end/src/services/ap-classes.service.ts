@@ -7,7 +7,9 @@ export interface ApClass {
   attributes: string[];
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ApClassesService {
   private readonly apClasses: ApClass[] = [
     {

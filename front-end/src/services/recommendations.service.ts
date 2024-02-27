@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { ApClassesService, ApClass } from './ap-classes.service';
 import { MajorsService } from './majors.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root' 
+})
 export class RecommendationsService {
   constructor(
     private readonly apClassesService: ApClassesService,
@@ -10,7 +12,6 @@ export class RecommendationsService {
   ) {}
 
   getRecommendations(major1: string, major2: string): ApClass[] {
-    // Assuming getMajorAttributes and getAllApClasses are now synchronous
     const attributesMajor1 = this.majorsService.getMajorAttributes(major1);
     const attributesMajor2 = this.majorsService.getMajorAttributes(major2);
 

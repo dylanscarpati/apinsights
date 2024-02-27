@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MajorsService } from '../../../services/majors.service';
-import { Major } from '../../../services/majors.service';
+import { MajorsService, Major } from '../../../services/majors.service'
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-majors-list',
@@ -33,12 +33,15 @@ export class MajorsListComponent implements OnInit {
 
   generateRecommendations(): void {
     if (this.selectedMajors.length === 2) {
-      this.router.navigate(['/recommendations'], { 
-        queryParams: { 
-          major1: this.selectedMajors[0].id,
-          major2: this.selectedMajors[1].id
-        }
-      });
+      const queryParams = {
+        major1: this.selectedMajors[0].id,
+        major2: this.selectedMajors[1].id
+      };
+      const navigationExtras: NavigationExtras = {
+        queryParams: queryParams
+      };
+      this.router.navigateByUrl('/recommendations', navigationExtras);
     }
   }
+  
 }
