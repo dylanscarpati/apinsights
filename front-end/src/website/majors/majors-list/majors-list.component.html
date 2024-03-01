@@ -1,46 +1,268 @@
-<body>
-    <div class="header">
+<div class="header">
         <h1>Please select two majors from the following list:</h1>
     </div>
     <div class="content">
         <div class="categories">
-          <button (click)="selectMajor({ id: '1', name: 'Computer Science', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '1', name: 'Computer Science', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation', 'Interdisciplinary Knowledge'] })">Computer Science</button>
-          <button (click)="selectMajor({ id: '2', name: 'Business and Management', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Communication Skills', 'Problem-Solving', 'Global Perspectives'] })" [class.selected]="isSelected({ id: '2', name: 'Business and Management', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Communication Skills', 'Problem-Solving', 'Global Perspectives'] })">Business and Management</button>
-          <button (click)="selectMajor({ id: '3', name: 'Nursing', attributes: ['Scientific Methodology', 'Ethical Reasoning', 'Communication Skills', 'Health and Life Sciences', 'Problem-Solving', 'Social Justice and Equity'] })" [class.selected]="isSelected({ id: '3', name: 'Nursing', attributes: ['Scientific Methodology', 'Ethical Reasoning', 'Communication Skills', 'Health and Life Sciences', 'Problem-Solving', 'Social Justice and Equity'] })">Nursing</button>
-          <button (click)="selectMajor({ id: '4', name: 'Engineering (General)', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '4', name: 'Engineering (General)', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Engineering (General)</button>
-          <button (click)="selectMajor({ id: '5', name: 'Biology/Biological Sciences', attributes: ['Scientific Methodology', 'Analytical Thinking', 'Data Interpretation', 'Health and Life Sciences'] })" [class.selected]="isSelected({ id: '5', name: 'Biology/Biological Sciences', attributes: ['Scientific Methodology', 'Analytical Thinking', 'Data Interpretation', 'Health and Life Sciences'] })">Biology/Biological Sciences</button>
-          <button (click)="selectMajor({ id: '6', name: 'Psychology', attributes: ['Analytical Thinking', 'Scientific Methodology', 'Communication Skills', 'Problem-Solving'] })" [class.selected]="isSelected({ id: '6', name: 'Psychology', attributes: ['Analytical Thinking', 'Scientific Methodology', 'Communication Skills', 'Problem-Solving'] })">Psychology</button>
-          <button (click)="selectMajor({ id: '7', name: 'Finance and Accounting', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Problem-Solving', 'Data Interpretation'] })" [class.selected]="isSelected({ id: '7', name: 'Finance and Accounting', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Problem-Solving', 'Data Interpretation'] })">Finance and Accounting</button>
-          <button (click)="selectMajor({ id: '8', name: 'Mechanical Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '8', name: 'Mechanical Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Mechanical Engineering</button>
-          <button (click)="selectMajor({ id: '9', name: 'Political Science/Government', attributes: ['Analytical Thinking', 'Historical Perspectives', 'Global Perspectives', 'Social Justice and Equity'] })" [class.selected]="isSelected({ id: '9', name: 'Political Science/Government', attributes: ['Analytical Thinking', 'Historical Perspectives', 'Global Perspectives', 'Social Justice and Equity'] })">Political Science/Government</button>
-          <button (click)="selectMajor({ id: '10', name: 'Economics', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Global Perspectives'] })" [class.selected]="isSelected({ id: '10', name: 'Economics', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Global Perspectives'] })">Economics</button>
-          <button (click)="selectMajor({ id: '11', name: 'Electrical Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '11', name: 'Electrical Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Electrical Engineering</button>
-          <button (click)="selectMajor({ id: '12', name: 'Mathematics', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Problem-Solving'] })" [class.selected]="isSelected({ id: '12', name: 'Mathematics', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Problem-Solving'] })">Mathematics</button>
-          <button (click)="selectMajor({ id: '13', name: 'English Language and Literature', attributes: ['Analytical Thinking', 'Creative Expression', 'Communication Skills', 'Historical Perspectives'] })" [class.selected]="isSelected({ id: '13', name: 'English Language and Literature', attributes: ['Analytical Thinking', 'Creative Expression', 'Communication Skills', 'Historical Perspectives'] })">English Language and Literature</button>
-          <button (click)="selectMajor({ id: '14', name: 'Chemical Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '14', name: 'Chemical Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Chemical Engineering</button>
-          <button (click)="selectMajor({ id: '15', name: 'History', attributes: ['Historical Perspectives', 'Cultural Awareness', 'Global Perspectives', 'Research Methodology'] })" [class.selected]="isSelected({ id: '15', name: 'History', attributes: ['Historical Perspectives', 'Cultural Awareness', 'Global Perspectives', 'Research Methodology'] })">History</button>
-          <button (click)="selectMajor({ id: '16', name: 'Civil Engineering', attributes: ['Analytical Thinking', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '16', name: 'Civil Engineering', attributes: ['Analytical Thinking', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Civil Engineering</button>
-          <button (click)="selectMajor({ id: '17', name: 'Environmental Science', attributes: ['Scientific Methodology', 'Environmental Awareness', 'Data Interpretation', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '17', name: 'Environmental Science', attributes: ['Scientific Methodology', 'Environmental Awareness', 'Data Interpretation', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Environmental Science</button>
-          <button (click)="selectMajor({ id: '18', name: 'Marketing/Marketing Management', attributes: ['Analytical Thinking', 'Creative Expression', 'Communication Skills', 'Problem-Solving'] })" [class.selected]="isSelected({ id: '18', name: 'Marketing/Marketing Management', attributes: ['Analytical Thinking', 'Creative Expression', 'Communication Skills', 'Problem-Solving'] })">Marketing/Marketing Management</button>
-          <button (click)="selectMajor({ id: '19', name: 'Physics', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '19', name: 'Physics', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Physics</button>
-          <button (click)="selectMajor({ id: '20', name: 'Health Sciences/Pre-med', attributes: ['Scientific Methodology', 'Health and Life Sciences', 'Ethical Reasoning', 'Communication Skills', 'Problem-Solving'] })" [class.selected]="isSelected({ id: '20', name: 'Health Sciences/Pre-med', attributes: ['Scientific Methodology', 'Health and Life Sciences', 'Ethical Reasoning', 'Communication Skills', 'Problem-Solving'] })">Health Sciences/Pre-med</button>
-          <button (click)="selectMajor({ id: '21', name: 'Information Technology (IT)', attributes: ['Analytical Thinking', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation'] })" [class.selected]="isSelected({ id: '21', name: 'Information Technology (IT)', attributes: ['Analytical Thinking', 'Technical Proficiency', 'Problem-Solving', 'Data Interpretation'] })">Information Technology (IT)</button>
-          <button (click)="selectMajor({ id: '22', name: 'Biomedical Engineering', attributes: ['Analytical Thinking', 'Scientific Methodology', 'Technical Proficiency', 'Problem-Solving', 'Health and Life Sciences'] })" [class.selected]="isSelected({ id: '22', name: 'Biomedical Engineering', attributes: ['Analytical Thinking', 'Scientific Methodology', 'Technical Proficiency', 'Problem-Solving', 'Health and Life Sciences'] })">Biomedical Engineering</button>
-          <button (click)="selectMajor({ id: '23', name: 'Communications', attributes: ['Analytical Thinking', 'Creative Expression', 'Communication Skills', 'Problem-Solving'] })" [class.selected]="isSelected({ id: '23', name: 'Communications', attributes: ['Analytical Thinking', 'Creative Expression', 'Communication Skills', 'Problem-Solving'] })">Communications</button>
-          <button (click)="selectMajor({ id: '24', name: 'Architecture', attributes: ['Analytical Thinking', 'Creative Expression', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '24', name: 'Architecture', attributes: ['Analytical Thinking', 'Creative Expression', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Architecture</button>
-          <button (click)="selectMajor({ id: '25', name: 'Education', attributes: ['Analytical Thinking', 'Communication Skills', 'Problem-Solving', 'Social Justice and Equity'] })" [class.selected]="isSelected({ id: '25', name: 'Education', attributes: ['Analytical Thinking', 'Communication Skills', 'Problem-Solving', 'Social Justice and Equity'] })">Education</button>
-          <button (click)="selectMajor({ id: '26', name: 'Computer Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '26', name: 'Computer Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Computer Engineering</button>
-          <button (click)="selectMajor({ id: '27', name: 'Art & Design', attributes: ['Creative Expression', 'Cultural Awareness', 'Problem-Solving'] })" [class.selected]="isSelected({ id: '27', name: 'Art & Design', attributes: ['Creative Expression', 'Cultural Awareness', 'Problem-Solving'] })">Art & Design</button>
-          <button (click)="selectMajor({ id: '28', name: 'Pharmacy', attributes: ['Scientific Methodology', 'Health and Life Sciences', 'Ethical Reasoning', 'Problem-Solving'] })" [class.selected]="isSelected({ id: '28', name: 'Pharmacy', attributes: ['Scientific Methodology', 'Health and Life Sciences', 'Ethical Reasoning', 'Problem-Solving'] })">Pharmacy</button>
-          <button (click)="selectMajor({ id: '29', name: 'Nutrition/Dietetics', attributes: ['Scientific Methodology', 'Health and Life Sciences', 'Problem-Solving', 'Ethical Reasoning'] })" [class.selected]="isSelected({ id: '29', name: 'Nutrition/Dietetics', attributes: ['Scientific Methodology', 'Health and Life Sciences', 'Problem-Solving', 'Ethical Reasoning'] })">Nutrition/Dietetics</button>
-          <button (click)="selectMajor({ id: '30', name: 'Software Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '30', name: 'Software Engineering', attributes: ['Analytical Thinking', 'Quantitative Skills', 'Technical Proficiency', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Software Engineering</button>
-          <button (click)="selectMajor({ id: '31', name: 'Anthropology/Sociology', attributes: ['Analytical Thinking', 'Cultural Awareness', 'Global Perspectives', 'Social Justice and Equity'] })" [class.selected]="isSelected({ id: '31', name: 'Anthropology/Sociology', attributes: ['Analytical Thinking', 'Cultural Awareness', 'Global Perspectives', 'Social Justice and Equity'] })">Anthropology/Sociology</button>
-          <button (click)="selectMajor({ id: '32', name: 'International Relations', attributes: ['Analytical Thinking', 'Global Perspectives', 'Communication Skills', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '32', name: 'International Relations', attributes: ['Analytical Thinking', 'Global Perspectives', 'Communication Skills', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">International Relations</button>
-          <button (click)="selectMajor({ id: '33', name: 'Criminal Justice', attributes: ['Analytical Thinking', 'Problem-Solving', 'Ethical Reasoning', 'Social Justice and Equity'] })" [class.selected]="isSelected({ id: '33', name: 'Criminal Justice', attributes: ['Analytical Thinking', 'Problem-Solving', 'Ethical Reasoning', 'Social Justice and Equity'] })">Criminal Justice</button>
-          <button (click)="selectMajor({ id: '34', name: 'Physical Therapy/Kinesiology', attributes: ['Analytical Thinking', 'Health and Life Sciences', 'Problem-Solving', 'Interdisciplinary Knowledge'] })" [class.selected]="isSelected({ id: '34', name: 'Physical Therapy/Kinesiology', attributes: ['Analytical Thinking', 'Health and Life Sciences', 'Problem-Solving', 'Interdisciplinary Knowledge'] })">Physical Therapy/Kinesiology</button>
-          <button (click)="selectMajor({ id: '35', name: 'Foreign Languages', attributes: ['Analytical Thinking', 'Cultural Awareness', 'Communication Skills', 'Global Perspectives'] })" [class.selected]="isSelected({ id: '35', name: 'Foreign Languages', attributes: ['Analytical Thinking', 'Cultural Awareness', 'Communication Skills', 'Global Perspectives'] })">Foreign Languages</button>
-          <button (click)="selectMajor({ id: '36', name: 'Religious Studies', attributes: ['Analytical Thinking', 'Cultural Awareness', 'Historical Perspectives', 'Ethical Reasoning'] })" [class.selected]="isSelected({ id: '36', name: 'Religious Studies', attributes: ['Analytical Thinking', 'Cultural Awareness', 'Historical Perspectives', 'Ethical Reasoning'] })">Religious Studies</button>
+          
+          <button 
+            (click)="selectMajor(majors[0])" 
+            [style.backgroundColor]="isSelected(majors[0]) ? '#e95c73' : '#FFC0CB'">
+            {{ isSelected(majors[0]) ? '' : '' }} 
+            Computer Science
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[1])" 
+          [style.backgroundColor]="isSelected(majors[1]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[1]) ? '' : '' }}
+            Business and Management
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[2])" 
+          [style.backgroundColor]="isSelected(majors[2]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[2]) ? '' : '' }}
+            Nursing
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[3])" 
+          [style.backgroundColor]="isSelected(majors[3]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[3]) ? '' : '' }}
+            Engineering (General)
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[4])" 
+          [style.backgroundColor]="isSelected(majors[4]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[4]) ? '' : '' }}
+            Biology/Biological Sciences
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[5])" 
+          [style.backgroundColor]="isSelected(majors[5]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[5]) ? '' : '' }}
+            Psychology
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[6])" 
+          [style.backgroundColor]="isSelected(majors[6]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[6]) ? '' : '' }}
+            Finance and Accounting
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[7])" 
+          [style.backgroundColor]="isSelected(majors[7]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[7]) ? '' : '' }}
+            Mechanical Engineering
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[8])" 
+          [style.backgroundColor]="isSelected(majors[8]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[8]) ? '' : '' }}
+            Political Science/Government
+          </button>
+          
+          <button 
+          (click)="selectMajor(majors[9])" 
+          [style.backgroundColor]="isSelected(majors[9]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[9]) ? '' : '' }}
+            Economics
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[10])" 
+          [style.backgroundColor]="isSelected(majors[10]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[10]) ? '' : '' }}
+            Electrical Engineering
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[11])" 
+          [style.backgroundColor]="isSelected(majors[11]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[11]) ? '' : '' }}
+            Mathematics
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[12])" 
+          [style.backgroundColor]="isSelected(majors[12]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[12]) ? '' : '' }}
+            English Language and Literature
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[13])" 
+          [style.backgroundColor]="isSelected(majors[13]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[13]) ? '' : '' }}
+            Chemical Engineering
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[14])" 
+          [style.backgroundColor]="isSelected(majors[14]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[14]) ? '' : '' }}
+            History
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[15])" 
+          [style.backgroundColor]="isSelected(majors[15]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[15]) ? '' : '' }}
+            Civil Engineering
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[16])" 
+          [style.backgroundColor]="isSelected(majors[16]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[16]) ? '' : '' }}
+            Environmental Science
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[17])" 
+          [style.backgroundColor]="isSelected(majors[17]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[17]) ? '' : '' }}
+            Marketing/Marketing Management
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[18])" 
+          [style.backgroundColor]="isSelected(majors[18]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[18]) ? '' : '' }}
+            Physics
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[19])" 
+          [style.backgroundColor]="isSelected(majors[19]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[19]) ? '' : '' }}
+            Health Sciences/Pre-med
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[20])" 
+          [style.backgroundColor]="isSelected(majors[20]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[20]) ? '' : '' }}
+            Information Technology (IT)
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[21])" 
+          [style.backgroundColor]="isSelected(majors[21]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[21]) ? '' : '' }}
+            Biomedical Engineering
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[22])" 
+          [style.backgroundColor]="isSelected(majors[22]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[22]) ? '' : '' }}
+            Communications
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[23])" 
+          [style.backgroundColor]="isSelected(majors[23]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[23]) ? '' : '' }}
+            Architecture
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[24])" 
+          [style.backgroundColor]="isSelected(majors[24]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[24]) ? '' : '' }}
+            Education
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[25])" 
+          [style.backgroundColor]="isSelected(majors[25]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[25]) ? '' : '' }}
+            Computer Engineering
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[26])" 
+          [style.backgroundColor]="isSelected(majors[26]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[26]) ? '' : '' }}
+            Art & Design
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[27])" 
+          [style.backgroundColor]="isSelected(majors[27]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[27]) ? '' : '' }}
+            Pharmacy
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[28])" 
+          [style.backgroundColor]="isSelected(majors[28]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[28]) ? '' : '' }}
+            Nutrition/Dietetics
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[29])" 
+          [style.backgroundColor]="isSelected(majors[29]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[29]) ? '' : '' }}
+            Software Engineering
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[30])" 
+          [style.backgroundColor]="isSelected(majors[30]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[30]) ? '' : '' }}
+            Anthropology/Sociology
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[31])" 
+          [style.backgroundColor]="isSelected(majors[31]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[31]) ? '' : '' }}
+            International Relations
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[32])" 
+          [style.backgroundColor]="isSelected(majors[32]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[32]) ? '' : '' }}
+            Criminal Justice
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[33])" 
+          [style.backgroundColor]="isSelected(majors[33]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[33]) ? '' : '' }}
+            Physical Therapy/Kinesiology
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[34])" 
+          [style.backgroundColor]="isSelected(majors[34]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[34]) ? '' : '' }}
+            Foreign Languages
+          </button>
+
+          <button 
+          (click)="selectMajor(majors[35])" 
+          [style.backgroundColor]="isSelected(majors[35]) ? '#e95c73' : '#FFC0CB'">
+          {{ isSelected(majors[35]) ? '' : '' }}
+            Religious Studies
+          </button>
+
         </div>
-        <button [disabled]="selectedMajors.length !== 2" (click)="generateRecommendations()">Generate Recommendations</button>
+
+        <button 
+            (click)="generateRecommendations()" 
+            [disabled]="selectedMajors.length !== 2"
+            [class.active]="selectedMajors.length === 2">
+            Generate Recommendations
+        </button>
+
     </div>
-  <body>

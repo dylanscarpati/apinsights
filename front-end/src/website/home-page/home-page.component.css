@@ -18,14 +18,14 @@ body {
 
 h1 {
   font-size: 6em;
-  color: #ffffff;
+  color: #83c5db;
   margin: 0;
   font-weight: bold;
 }
 
 .subtitle {
   font-size: 2em;
-  color: #ffffff;
+  color: #63bddb;
   margin-top: 20px;
   margin-bottom: 40px;
   font-weight: lighter;
@@ -36,8 +36,8 @@ h1 {
   width: 150px;
   border: none;
   border-radius: 20px;
-  background-color: #8B0000;
-  color: white;
+  background-color: #FFC0CB;
+  color: rgb(250, 127, 148);
   font-size: 1.5em;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -45,7 +45,7 @@ h1 {
 }
 
 .button:hover {
-  background-color: #A52A2A;
+  background-color: #e95c73;
 }
 
 .hero-image {

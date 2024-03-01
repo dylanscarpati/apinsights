@@ -1,17 +1,7 @@
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-image: linear-gradient(to bottom right, #FFC0CB, #ADD8E6);
-}
-
-
 .header h1 {
   text-align: center;
   font-size: 3em;
-  color: white;
+  color: #83c5db;
   margin-top: 50px;
 }
 
@@ -34,8 +24,8 @@ button {
   max-width: 500px;
   border: none;
   border-radius: 50px;
-  background-color: #8B0000;
-  color: white;
+  background-color: #FFC0CB;
+  color: rgb(250, 127, 148);
   font-size: 1em;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
@@ -44,8 +34,8 @@ button {
 
 button:hover,
 button:focus {
-  background-color: #A52A2A;
-  box-shadow: 0 0 10px #A52A2A;
+  background-color: #e95c73;
+  box-shadow: 0 0 10px #e07082;
 }
 
 button:active {
@@ -53,8 +43,20 @@ button:active {
 }
 
 button.selected {
-  background-color: #A52A2A;
-  box-shadow: 0 0 10px #A52A2A;
+  background-color: #e95c73;
+  box-shadow: 0 0 10px #e07082;
+}
+
+button.disabled {
+  background-color: #42b0d4;
+  color: #83c5db;
+  cursor: not-allowed; 
+}
+
+button:disabled {
+  background-color: #42b0d4;
+  color: #83c5db;
+  cursor: not-allowed;
 }
 
 .search {
