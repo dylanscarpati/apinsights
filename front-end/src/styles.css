@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   background-image: linear-gradient(to bottom right, #FFC0CB, #ADD8E6);
   background-attachment: fixed;
 }
