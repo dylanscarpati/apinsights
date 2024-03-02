@@ -9,13 +9,7 @@ import { ApClass } from '../../../services/ap-classes.service';
   styleUrls: ['./recommendations-view.component.css']
 })
 export class RecommendationsViewComponent implements OnInit {
-  recommendedClasses: ApClass[] = [];
-  showLoading: boolean = false;
-  showError: boolean = false;
-  showRecommendations: boolean = false;
-  noRecommendations: boolean = false;
-  errorMessage: string = '';
-  recommendationsHtml: string = '';
+  recommendationsHtml: string = ''; // This will hold the HTML content
 
   constructor(
     private route: ActivatedRoute,
@@ -24,33 +18,46 @@ export class RecommendationsViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.showLoading = true;
     this.route.queryParams.subscribe(params => {
       const major1 = params['major1'];
       const major2 = params['major2'];
 
       if (major1 && major2) {
-        this.recommendedClasses = this.recommendationsService.getRecommendations(major1, major2);
-        this.showLoading = false;
-        if (this.recommendedClasses.length > 0) {
-          this.recommendationsHtml = this.recommendedClasses.map(apClass =>
-            `<button onclick="window.location='/ap-classes/${apClass.id}'">${apClass.name}</button>`
-          ).join('');
-          this.showRecommendations = true;
-          this.noRecommendations = false;
-        } else {
-          this.noRecommendations = true;
-          this.showRecommendations = false;
-        }
+        const recommendedClasses = this.recommendationsService.getRecommendations(major1, major2);
+        this.generateRecommendationsHtml(recommendedClasses);
       } else {
-        this.errorMessage = 'Majors not specified. Please select two majors.';
-        this.showError = true;
-        this.showLoading = false;
+        this.recommendationsHtml = '<p>Majors not specified. Please select two majors.</p>';
       }
     });
   }
 
-  viewClassDetail(apClass: ApClass): void {
-    this.router.navigate(['/ap-classes', apClass.id]);
+  generateRecommendationsHtml(recommendedClasses: ApClass[]): void {
+  this.recommendationsHtml = recommendedClasses.map(rec => {
+    const difficultyClass = this.getDifficultyClass(rec.difficulty);
+    return `
+      <div class="recommendation-bubble">
+        <div class="bubble-header">
+          <span class="bubble-category ${difficultyClass}">${rec.difficulty}</span>
+          <h3 class="bubble-title">${rec.name}</h3>
+        </div>
+        <p class="bubble-description">${rec.description}</p>
+      </div>
+    `;
+  }).join('');
+}
+
+getDifficultyClass(difficulty: number): string {
+  switch(difficulty) {
+    case 5: return 'difficulty-5';
+    case 4: return 'difficulty-4';
+    case 3: return 'difficulty-3';
+    case 2: return 'difficulty-2';
+    case 1: return 'difficulty-1';
+    default: return '';
   }
+}
+
+editMajors(): void {
+  this.router.navigate(['/majors']);
+}
 }

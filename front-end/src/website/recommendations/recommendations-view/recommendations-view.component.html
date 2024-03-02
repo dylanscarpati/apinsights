@@ -1,13 +1,7 @@
-<div [hidden]="showLoading || showError || noRecommendations">
-  <h2>Here are your recommendations based on your selected majors:</h2>
+<div class="recommendations-container">
+  <h2>AP Class Recommendations</h2>
+  <div class="edit-majors-button-container">
+    <button class="button" (click)="editMajors()">Edit Majors</button>
+  </div>
   <div [innerHTML]="recommendationsHtml"></div>
-</div>
-<div [hidden]="!showLoading">
-  <p>Loading...</p>
-</div>
-<div [hidden]="!showError">
-  <p>{{ errorMessage }}</p>
-</div>
-<div [hidden]="!noRecommendations">
-  <p>No recommendations found. Please try selecting different majors.</p>
 </div>

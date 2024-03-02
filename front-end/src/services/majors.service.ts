@@ -59,8 +59,8 @@ export class MajorsService {
     return this.majors.find(major => major.id === id);
   }
 
-  getMajorAttributes(majorName: string): string[] {
-    const major = this.majors.find(major => major.name === majorName);
+  getMajorAttributes(majorId: string): string[] {
+    const major = this.findOne(majorId);
     return major ? major.attributes : [];
   }
 }

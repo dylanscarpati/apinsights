@@ -1,8 +1,71 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-image: linear-gradient(to bottom right, #FFC0CB, #ADD8E6);
+  background-attachment: fixed;
+}
+
+.recommendation-bubble {
+  background-color: #FFC0CB;
+  border-radius: 25px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bubble-header {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+
+.bubble-category {
+  background-color: #e95c73;
+  color: white;
+  border-radius: 10px; 
+  padding: 5px 10px; 
+  text-transform: uppercase; 
+  font-size: 0.8em;
+}
+
+.bubble-title {
+  font-size: 1.2em; 
+  font-weight: bold; 
+  color: #54b2d1;
+}
+
+.bubble-description {
+  margin-top: 10px; 
+  color: #15b0e4;
+}
+
+.difficulty-5 {
+  background-color: #e02e2e;
+  color: #ffffff;
+}
+
+.difficulty-4 {
+  background-color: #ff8000;
+  color: #ffffff;
+}
+
+.difficulty-3 {
+  background-color: #05befc;
+  color: #ffffff;
+}
+
+.difficulty-2 {
+  background-color: #0cee0c; 
+  color: #ffffff;
+}
+
+.difficulty-1 {
+  background-color: #0cee0c;
+  color: #ffffff;
 }
