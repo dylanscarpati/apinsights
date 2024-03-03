@@ -11,6 +11,18 @@ This project is a web application designed to help high school students select A
 - Use of the Jaccard index to measure the similarity between major attributes and AP class attributes.
     - J(Major2, Major2) = |Major2 ∩ Major2| / |Major2 ∪ Major2|
 
+## Future Features
+
+In the development pipeline for APInsights, we envision a range of enhancements that will further enrich the user experience and provide additional value to students navigating their AP courses. Here are some of the features we are excited about:
+
+- **Dedicated AP Class Pages**: Each AP class will have its own dedicated page that provides comprehensive information such as score distributions, study tools, and AP test dates.
+
+- **AP Score Calculator**: An integrated tool that allows students to estimate their AP scores based on their performance on practice questions and exams.
+
+- **Tier Lists**: Curated rankings that evaluate the usefulness and difficulty of each AP class, helping students make informed decisions about which courses to take.
+
+- **Interactive Practice Quizzes and Exams**: To reinforce learning and exam preparedness, we will offer a suite of interactive quizzes and exams that mimic the format and challenge of actual AP tests.
+
 ## Installation
 
 To set up the project for development on your local machine, please follow the instructions below:
