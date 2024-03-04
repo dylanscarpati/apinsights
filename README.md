@@ -27,21 +27,26 @@ In the development pipeline for APInsights, we envision a range of enhancements 
 
 To set up the project for development on your local machine, please follow the instructions below:
 
-1. Clone the repository:
+1. Install the dependencies:
+   ```
+   npm install
+   npm install -g @angular/cli
+   ```
+2. Clone the repository:
    ```
    git clone https://github.com/dylanscarpati/apinsights.git
    ```
 2. Navigate to the project directory:
    ```
-   cd apinsights
-   ```
-3. Install the dependencies:
-   ```
-   npm install
+   cd ...apinsights\client
    ```
 4. Start the development server:
    ```
-   npm start
+   ng serve
+   ```
+5. Accessing the website:
+   ```
+   Open your web browser and go to `http://localhost:4200`
    ```
 ## License
 
