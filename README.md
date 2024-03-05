@@ -31,7 +31,6 @@ To set up the project for development on your local machine, please follow the i
    ```
    node.js from: https://nodejs.org/
    git from: https://git-scm.com/
-   npm install
    npm install -g @angular/cli
    ```
 2. Clone the repository:
@@ -42,8 +41,9 @@ To set up the project for development on your local machine, please follow the i
    ```
    cd ...\apinsights\client
    ```
-4. Start the development server:
+4. Install more dependencies and start the development server:
    ```
+   npm install
    npm start
    ```
 5. Accessing the website:
