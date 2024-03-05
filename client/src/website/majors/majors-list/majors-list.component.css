@@ -3,6 +3,7 @@
   font-size: 3em;
   color: #83c5db;
   margin-top: 50px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .content {
@@ -14,7 +15,7 @@
 .categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  gap: 5px;
   margin-bottom: 20px;
 }
 
@@ -30,6 +31,8 @@ button {
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   outline: none;
+  font-weight: bold;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 button:hover,

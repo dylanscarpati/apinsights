@@ -6,7 +6,16 @@ body {
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
   background-image: linear-gradient(to bottom right, #FFC0CB, #ADD8E6);
+  background: linear-gradient(270deg, #FFC0CB, #ADD8E6, #B19CD9);
   background-attachment: fixed;
+  animation: moveBackground 20s ease infinite;
+  background-size: 600% 600%;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .recommendation-bubble {
