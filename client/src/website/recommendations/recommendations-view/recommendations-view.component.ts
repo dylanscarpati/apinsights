@@ -32,19 +32,20 @@ export class RecommendationsViewComponent implements OnInit {
   }
 
   generateRecommendationsHtml(recommendedClasses: ApClass[]): void {
-  this.recommendationsHtml = recommendedClasses.map(rec => {
-    const difficultyClass = this.getDifficultyClass(rec.difficulty);
-    return `
-      <div class="recommendation-bubble">
-        <div class="bubble-header">
-          <span class="bubble-category ${difficultyClass}">${rec.difficulty}</span>
-          <h3 class="bubble-title">${rec.name}</h3>
+    this.recommendationsHtml = recommendedClasses.map(rec => {
+      const difficultyClass = this.getDifficultyClass(rec.difficulty);
+      const difficultyMessage = this.getDifficultyMessage(rec.difficulty);
+      return `
+        <div class="recommendation-bubble">
+          <div class="bubble-header">
+            <span class="bubble-category ${difficultyClass}" title="${difficultyMessage}">${rec.difficulty}</span>
+            <h3 class="bubble-title">${rec.name}</h3>
+          </div>
+          <p class="bubble-description">${rec.description}</p>
         </div>
-        <p class="bubble-description">${rec.description}</p>
-      </div>
-    `;
-  }).join('');
-}
+      `;
+    }).join('');
+  }
 
 getDifficultyClass(difficulty: number): string {
   switch(difficulty) {
@@ -54,6 +55,17 @@ getDifficultyClass(difficulty: number): string {
     case 2: return 'difficulty-2';
     case 1: return 'difficulty-1';
     default: return '';
+  }
+}
+
+getDifficultyMessage(difficulty: number): string {
+  switch(difficulty) {
+    case 5: return 'This AP class is considered one of the hardest.';
+    case 4: return 'This AP class is challenging.';
+    case 3: return 'This AP class is moderately difficult.';
+    case 2: return 'This AP class is relatively easy.';
+    case 1: return 'This AP class is the least difficult.';
+    default: return 'Difficulty rating not available.';
   }
 }
 

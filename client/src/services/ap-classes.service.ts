@@ -72,7 +72,7 @@ export class ApClassesService {
     {
       id: '9',
       name: 'AP Computer Science Principles',
-      difficulty: 2,
+      difficulty: 1,
       attributes: ['Analytical Thinking', 'Problem-Solving'],
       description: 'Introduces the foundational concepts of computer science, emphasizing problem-solving and computing impacts.',
     },
