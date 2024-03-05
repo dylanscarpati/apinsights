@@ -52,7 +52,8 @@ To set up the project for development on your local machine, please follow the i
    ```
    Troubleshooting:
    ```
-   If you are a Mac user, try inserting `sudo` before each command. This will help with Mac's strict permission controls.
+   If you are a Mac user, try inserting `sudo` before each command. 
+   This will help with Mac's strict permission controls.
    ```
 ## License
 
