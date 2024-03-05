@@ -50,6 +50,10 @@ To set up the project for development on your local machine, please follow the i
    ```
    Open your web browser and go to `http://localhost:4200`
    ```
+   Troubleshooting:
+   ```
+   If you are a Mac user, try inserting `sudo` before each command. This will help with Mac's strict permission controls.
+   ```
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
